@@ -1,6 +1,22 @@
+@font-face {
+    font-family: "Norse Bold";
+    src: url("resources/Norse-Bold.otf");
+}
+
+:root {
+    --light-white: rgb(249, 250, 251);
+    --input-width: 15rem;
+    --input-height: 1.8rem;
+    --button-color: #596D48;
+    --error-color: crimson;
+}
 html, body {
     width: 100%;
     height: 100%;
+}
+
+p, input, label, h2 {
+    font-family: "Segoe UI", sans-serif;
 }
 
 * {
@@ -12,14 +28,50 @@ html, body {
 .main-container {
     display: flex;
     flex-direction: row;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .left-panel{
     width: 450px;
     display: flex;
     overflow: hidden;
+}
+
+.odin-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    margin-top: 150px;
+    height: 120px;
+    width: 450px;
+    opacity: 65%;
+    gap: 10px;
+}
+
+.odin-logo {
+    height: 90%;
+}
+
+.odin-text {
+    color: white;
+    font-family: "Norse Bold", sans-serif;
+    font-size: 100px;
+}
+
+#image-credits {
+    position: absolute;
+    color: white;
+    bottom: 50px;
+    font-size: small;
+    text-align: center;
+    width: 450px;
+}
+
+#image-credits > a {
+    color: white;
 }
 
 .background-image {
@@ -29,4 +81,110 @@ html, body {
 
 .right-panel {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-white);
+}
+
+.gap-filler-1 {
+    flex: 0.4;
+}
+
+.container-top {
+    flex: 0.5;
+    padding-left: 5%;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+
+.container-form {
+    flex: 1;
+    background-color: white;
+    padding-left: 5%;
+    padding-bottom: 30px;
+    box-shadow: 10px 5px 5px lightgray;
+}
+
+h2 {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: start;
+}
+
+.form-column {
+    flex: auto;
+    max-width: 30%;
+}
+
+input {
+    width: var(--input-width);
+    height: var(--input-height);
+    border: 2px solid #E5E7EB;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+    border: darkblue 1px solid;
+    box-shadow: 0 0 10px lightskyblue;
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    border: 2px solid var(--error-color);
+}
+
+#password-error-text {
+    color: var(--error-color);
+    margin-top: -10px;
+    font-size: small;
+}
+
+.container-bottom {
+    flex: 1;
+    padding-left: 5%;
+}
+
+.container-form label {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.8rem;
+}
+
+.italics {
+    font-style: italic;
+}
+
+#create-account-btn {
+    margin: 40px 0px 20px;
+    width: calc(0.8 * var(--input-width));
+    height: calc(1.5 * var(--input-height));
+    border-radius: 5px;
+    color: white;
+    background-color: var(--button-color);
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+#create-account-btn:hover {
+    cursor: pointer;
+}
+
+#login-link {
+    font-weight: 700;
+    color: var(--button-color);
+}
+
+#login-link:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
